@@ -2,41 +2,24 @@
 
 **Dernière mise à jour :** 9 septembre 2026
 
-Bienvenue sur la politique de confidentialité de **TicketStay**. Nous respectons votre vie privée et nous nous engageons à protéger vos données personnelles.
+Bienvenue sur la politique de confidentialité de **TicketStay**. Tout ce que vous écrivez ici s'affichera directement et automatiquement sur la page web `privacy.html` avec le design du site.
 
 ---
 
-## 1. Données que nous collectons
-
-Lorsque vous utilisez l'application **TicketStay**, nous pouvons collecter les informations suivantes :
-- **Informations de compte :** Nom, adresse courriel, numéro de téléphone.
-- **Données de réservation :** Historique de vos achats de billets et réservations.
-- **Données d'utilisation :** Informations sur la façon dont vous interagissez avec l'application.
+## 1. Données collectées
+- Informations de compte (Nom, courriel).
+- Données de réservation et d'événements.
 
 ---
 
-## 2. Utilisation de vos données
-
-Nous utilisons vos données uniquement pour :
-- Vous fournir l'accès à vos billets et réservations.
-- Traiter vos transactions de manière sécurisée.
-- Vous envoyer des confirmations de réservation ou des mises à jour d'événements.
+## 2. Utilisation
+Vos données servent exclusivement à faire fonctionner l'application TicketStay et sécuriser vos accès.
 
 ---
 
-## 3. Partage des données
-
-Nous ne vendons ni ne louons vos données personnelles à des tiers. Vos données peuvent être partagées uniquement avec :
-- Les organisateurs d'événements pour valider vos entrées.
-- Les services de paiement sécurisés.
-
----
-
-## 4. Vos droits
-
-Vous pouvez à tout moment demander l'accès, la rectification ou la suppression de vos données personnelles directement en nous contactant.
-
----
+## 3. Contact
+- **App Store :** [Télécharger l'application](https://apps.apple.com/ca/app/ticketstay/id6796148236)
+- **Discord :** [Rejoindre notre communauté](https://discord.gg/tpFYkftsW3)
 
 ## 5. Contact
 
