@@ -1,0 +1,25 @@
+/* Alignement et conteneur de la page légale */
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.legal-page h1, 
+.legal-page h2, 
+.legal-page h3 {
+  margin-top: 1.8em;
+  margin-bottom: 0.6em;
+  color: #111;
+}
+
+.legal-page p {
+  margin-bottom: 1.2em;
+}
+
+.legal-page ul {
+  padding-left: 20px;
+  margin-bottom: 1.2em;
+}
