@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Politique de Confidentialité - TicketStay</title>
+  
+  <!-- Lien vers ta feuille de style principale -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Script Marked pour convertir le texte Markdown en HTML propre -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+  <!-- En-tête / Navigation (utilise le même style que ta page d'accueil) -->
+  <header class="navbar">
+    <a href="index.html" class="logo">TicketStay</a>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="privacy.html" class="active">Confidentialité</a>
+    </nav>
+  </header>
+
+  <!-- Conteneur principal -->
+  <main class="container">
+    <div id="privacy-content" class="legal-page">
+      <p>Chargement de la politique de confidentialité...</p>
+    </div>
+  </main>
+
+  <!-- Pied de page -->
+  <footer>
+    <p>&copy; 2026 TicketStay. Tous droits réservés.</p>
+  </footer>
+
+  <!-- Script pour charger dynamiquement le fichier privacy.md -->
+  <script>
+    async function loadPrivacyPolicy() {
+      try {
+        const response = await fetch('privacy.md');
+        if (!response.ok) {
+          throw new Error('Fichier introuvable');
+        }
+        const text = await response.text();
+        
+        // Convertit le contenu Markdown en HTML et l'insère dans la page
+        document.getElementById('privacy-content').innerHTML = marked.parse(text);
+      } catch (error) {
+        document.getElementById('privacy-content').innerHTML = 1
+          '<p>Impossible de charger la politique de confidentialité pour le moment.</p>';
+      }
+    }
+
+    // Lancement au chargement de la page
+    loadPrivacyPolicy();
+  </script>
+</body>
+</html>
