@@ -4,37 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Politique de Confidentialité - TicketStay</title>
-  
-  <!-- Lien vers ta feuille de style principale -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- Script Marked pour convertir le texte Markdown en HTML propre -->
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- Script pour convertir automatiquement le Markdown en HTML -->
+  <script src="[https://cdn.jsdelivr.net/npm/marked/marked.min.js](https://cdn.jsdelivr.net/npm/marked/marked.min.js)"></script>
 </head>
 <body>
 
-  <!-- En-tête / Navigation (utilise le même style que ta page d'accueil) -->
-  <header class="navbar">
-    <a href="index.html" class="logo">TicketStay</a>
-    <nav>
-      <a href="index.html">Accueil</a>
-      <a href="privacy.html" class="active">Confidentialité</a>
-    </nav>
-  </header>
+  <!-- BARRE DE NAVIGATION -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">🎟️</span> TicketStay
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="[https://discord.gg/tpFYkftsW3](https://discord.gg/tpFYkftsW3)" target="_blank" class="discord-link">💬 Discord</a></li>
+      <li><a href="privacy.html" class="active">Confidentialité</a></li>
+      <li><a href="[https://apps.apple.com/ca/app/ticketstay/id6796148236](https://apps.apple.com/ca/app/ticketstay/id6796148236)" target="_blank" class="btn-nav">Obtenir l'application</a></li>
+    </ul>
+  </nav>
 
-  <!-- Conteneur principal -->
+  <!-- CONTENU CHARGÉ DEPUIS privacy.md -->
   <main class="container">
     <div id="privacy-content" class="legal-page">
       <p>Chargement de la politique de confidentialité...</p>
     </div>
   </main>
 
-  <!-- Pied de page -->
-  <footer>
-    <p>&copy; 2026 TicketStay. Tous droits réservés.</p>
+  <!-- PIED DE PAGE -->
+  <footer class="footer">
+    <p>© 2026 TicketStay. Tous droits réservés.</p>
+    <div class="footer-links">
+      <a href="index.html">Accueil</a>
+      <a href="[https://discord.gg/tpFYkftsW3](https://discord.gg/tpFYkftsW3)" target="_blank">Discord</a>
+    </div>
   </footer>
 
-  <!-- Script pour charger dynamiquement le fichier privacy.md -->
+  <!-- SCRIPT DE CHARGEMENT AUTOMATIQUE -->
   <script>
     async function loadPrivacyPolicy() {
       try {
@@ -43,16 +48,19 @@
           throw new Error('Fichier introuvable');
         }
         const text = await response.text();
-        
-        // Convertit le contenu Markdown en HTML et l'insère dans la page
         document.getElementById('privacy-content').innerHTML = marked.parse(text);
       } catch (error) {
-        document.getElementById('privacy-content').innerHTML = 1
-          '<p>Impossible de charger la politique de confidentialité pour le moment.</p>';
+        document.getElementById('privacy-content').innerHTML = `
+          <h1>Politique de Confidentialité</h1>
+          <p>Impossible de charger le fichier privacy.md pour le moment.</p>
+        `;
       }
     }
+    loadPrivacyPolicy();
+  </script>
 
-    // Lancement au chargement de la page
+</body>
+</html>
     loadPrivacyPolicy();
   </script>
 </body>
