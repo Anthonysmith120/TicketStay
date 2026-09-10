@@ -1,197 +1,228 @@
-<!-- DÉMO MOBILE & DESKTOP : SECTION ÉTAGE -->
-<section class="floor-demo">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <!-- CETTE BALISE EST CRUCIALE POUR LE SUR-MESURE MOBILE -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Démo Étage - TicketStay</title>
   
-  <!-- En-tête de l'étage -->
-  <div class="floor-header">
-    <div>
-      <span class="badge-floor">ÉSTAGE 1</span>
-      <h2>Suite Panoramique & Chambres</h2>
-    </div>
-    <span class="status-available">✓ 3 Unités Libres</span>
-  </div>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Grille des chambres -->
-  <div class="floor-grid">
-    
-    <!-- Chambre 1 -->
-    <div class="room-card">
-      <div class="room-info">
-        <h3>Chambre 101 — Deluxe</h3>
-        <p>Lit King • Balcon Privé • Vue Montagne</p>
-      </div>
-      <div class="room-action">
-        <span class="price">150$ <span>/ nuit</span></span>
-        <button class="btn-book">Réserver</button>
-      </div>
-    </div>
+  <style>
+    :root {
+      --bg-color: #0b0c10;
+      --card-bg: #181a24;
+      --accent-color: #8b5cf6;
+      --accent-hover: #7c3aed;
+      --text-main: #ffffff;
+      --text-muted: #c5c6c7;
+      --border-color: #374151;
+    }
 
-    <!-- Chambre 2 -->
-    <div class="room-card">
-      <div class="room-info">
-        <h3>Chambre 102 — Suite</h3>
-        <p>2 Lits Queen • Jacuzzi • Salon</p>
-      </div>
-      <div class="room-action">
-        <span class="price">220$ <span>/ nuit</span></span>
-        <button class="btn-book">Réserver</button>
-      </div>
-    </div>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
 
-    <!-- Chambre 3 (Occupée) -->
-    <div class="room-card disabled">
-      <div class="room-info">
-        <h3>Chambre 103 — Standard</h3>
-        <p>Lit Queen • Salle de bain privée</p>
-      </div>
-      <div class="room-action">
-        <span class="price-disabled">Occupé</span>
-        <button class="btn-disabled" disabled>Indisponible</button>
-      </div>
-    </div>
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      padding: 20px 15px;
+      line-height: 1.5;
+    }
 
-  </div>
-</section>
-
-<!-- STYLES CSS MOBILES ET DESKTOP -->
-<style>
-  .floor-demo {
-    background: #181a24;
-    border: 1px solid #374151;
-    border-radius: 20px;
-    padding: 24px;
-    margin: 30px auto;
-    max-width: 800px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    color: white;
-  }
-
-  .floor-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    border-bottom: 1px solid #374151;
-    padding-bottom: 15px;
-    margin-bottom: 20px;
-    gap: 10px;
-  }
-
-  .badge-floor {
-    background: rgba(139, 92, 246, 0.2);
-    color: #8b5cf6;
-    padding: 4px 10px;
-    border-radius: 10px;
-    font-size: 11px;
-    font-weight: 800;
-  }
-
-  .floor-header h2 {
-    margin-top: 6px;
-    font-size: 20px;
-  }
-
-  .status-available {
-    color: #10b981;
-    background: rgba(16, 185, 129, 0.15);
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-weight: 700;
-    font-size: 12px;
-    white-space: nowrap;
-  }
-
-  /* Grille réactive (empilement automatique sur mobile) */
-  .floor-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 16px;
-  }
-
-  .room-card {
-    background: #0b0c10;
-    border: 1px solid #374151;
-    border-radius: 16px;
-    padding: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .room-card.disabled {
-    opacity: 0.55;
-  }
-
-  .room-info h3 {
-    font-size: 16px;
-    margin-bottom: 4px;
-  }
-
-  .room-info p {
-    color: #c5c6c7;
-    font-size: 13px;
-    margin-bottom: 16px;
-  }
-
-  .room-action {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .price {
-    font-weight: 800;
-    font-size: 16px;
-    color: #8b5cf6;
-  }
-
-  .price span {
-    font-size: 12px;
-    color: #9ca3af;
-    font-weight: 400;
-  }
-
-  .price-disabled {
-    font-weight: 700;
-    font-size: 14px;
-    color: #ef4444;
-  }
-
-  .btn-book {
-    background: #8b5cf6;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 10px;
-    font-weight: 700;
-    cursor: pointer;
-  }
-
-  .btn-disabled {
-    background: #374151;
-    color: #9ca3af;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 10px;
-    font-weight: 700;
-    cursor: not-allowed;
-  }
-
-  /* Ajustements spécifiques sur écran smartphone */
-  @media (max-width: 480px) {
     .floor-demo {
-      padding: 16px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
     }
+
     .floor-header {
-      flex-direction: column;
+      display: flex;
+      justify-content: space-between;
       align-items: flex-start;
-    }
-    .room-action {
-      flex-direction: column;
-      align-items: stretch;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 15px;
+      margin-bottom: 20px;
       gap: 10px;
     }
-    .btn-book, .btn-disabled {
-      width: 100%;
-      text-align: center;
+
+    .badge-floor {
+      background: rgba(139, 92, 246, 0.2);
+      color: var(--accent-color);
+      padding: 4px 10px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 800;
     }
-  }
-</style>
+
+    .floor-header h2 {
+      margin-top: 6px;
+      font-size: 20px;
+    }
+
+    .status-available {
+      color: #10b981;
+      background: rgba(16, 185, 129, 0.15);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .floor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+    }
+
+    .room-card {
+      background: #0b0c10;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .room-card.disabled {
+      opacity: 0.55;
+    }
+
+    .room-info h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .room-info p {
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    .room-action {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .price {
+      font-weight: 800;
+      font-size: 16px;
+      color: var(--accent-color);
+    }
+
+    .price span {
+      font-size: 12px;
+      color: #9ca3af;
+      font-weight: 400;
+    }
+
+    .price-disabled {
+      font-weight: 700;
+      font-size: 14px;
+      color: #ef4444;
+    }
+
+    .btn-book {
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-disabled {
+      background: var(--border-color);
+      color: #9ca3af;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: not-allowed;
+    }
+
+    /* VRAIE ADAPTATION MOBILE EN UNE SEULE COLONNE */
+    @media (max-width: 650px) {
+      .floor-header {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .floor-grid {
+        grid-template-columns: 1fr; /* 1 seule colonne verticale */
+      }
+      .room-action {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+      .btn-book, .btn-disabled {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="floor-demo">
+    
+    <div class="floor-header">
+      <div>
+        <span class="badge-floor">ÉSTAGE 1</span>
+        <h2>Suite Panoramique & Chambres</h2>
+      </div>
+      <span class="status-available">✓ 3 Unités Libres</span>
+    </div>
+
+    <div class="floor-grid">
+      
+      <div class="room-card">
+        <div class="room-info">
+          <h3>Chambre 101 — Deluxe</h3>
+          <p>Lit King • Balcon Privé • Vue Montagne</p>
+        </div>
+        <div class="room-action">
+          <span class="price">150$ <span>/ nuit</span></span>
+          <button class="btn-book">Réserver</button>
+        </div>
+      </div>
+
+      <div class="room-card">
+        <div class="room-info">
+          <h3>Chambre 102 — Suite</h3>
+          <p>2 Lits Queen • Jacuzzi • Salon</p>
+        </div>
+        <div class="room-action">
+          <span class="price">220$ <span>/ nuit</span></span>
+          <button class="btn-book">Réserver</button>
+        </div>
+      </div>
+
+      <div class="room-card disabled">
+        <div class="room-info">
+          <h3>Chambre 103 — Standard</h3>
+          <p>Lit Queen • Salle de bain privée</p>
+        </div>
+        <div class="room-action">
+          <span class="price-disabled">Occupé</span>
+          <button class="btn-disabled" disabled>Indisponible</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
