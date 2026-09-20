@@ -6,6 +6,13 @@
   --rouge-vif: #ff4d6a;
   --glace: #E8F0F8;
   --acier: #7E8CA0;
+  --bleu: #2f7dd1;
+  --violet: #8b5cf6;
+  --or: #d4a72c;
+  --orange: #e2823a;
+  --teal: #14b8a6;
+  --vert: #3aa66b;
+  --rose: #ec4899;
   --fg: #12182a;
   --bg: #f4f7fb;
   --card-bg: rgba(255, 255, 255, 0.6);
@@ -116,10 +123,27 @@ header.hero {
 .orb.deux {
   width: 280px;
   height: 280px;
-  background: var(--marine);
+  background: var(--bleu);
   top: 20px;
   left: 62%;
 }
+
+.orb.trois {
+  width: 200px;
+  height: 200px;
+  background: var(--teal);
+  top: 130px;
+  left: 22%;
+}
+
+@keyframes derive {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(12px, -16px); }
+}
+
+.orb { animation: derive 16s ease-in-out infinite; }
+.orb.deux { animation-duration: 20s; animation-delay: -4s; }
+.orb.trois { animation-duration: 24s; animation-delay: -9s; }
 
 header.hero h1 {
   font-size: clamp(2.1rem, 5vw, 2.9rem);
@@ -192,6 +216,17 @@ h2.section-title {
   margin: 0 0 6px;
 }
 
+.section-title .dot {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 3px;
+  margin-right: 10px;
+  vertical-align: middle;
+  transform: translateY(-2px);
+  background: var(--dot, var(--rouge));
+}
+
 p.section-lead {
   color: var(--muted);
   margin: 0 0 26px;
@@ -209,8 +244,10 @@ p.section-lead {
 }
 
 .card {
+  --accent: var(--rouge);
   background: var(--card-bg);
   border: 1px solid var(--card-border);
+  border-top: 3px solid color-mix(in srgb, var(--accent) 55%, var(--card-border));
   border-radius: 18px;
   padding: 20px;
   backdrop-filter: blur(16px);
@@ -221,7 +258,7 @@ p.section-lead {
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 32px var(--shadow);
-  border-color: color-mix(in srgb, var(--rouge) 30%, var(--card-border));
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--card-border));
 }
 
 .icon-badge {
@@ -232,8 +269,8 @@ p.section-lead {
   align-items: center;
   justify-content: center;
   margin-bottom: 12px;
-  background: linear-gradient(135deg, color-mix(in srgb, var(--rouge) 20%, transparent), color-mix(in srgb, var(--marine) 22%, transparent));
-  color: var(--rouge);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 26%, transparent), color-mix(in srgb, var(--accent) 8%, transparent));
+  color: var(--accent);
 }
 
 .icon-badge svg { width: 19px; height: 19px; }
@@ -257,18 +294,32 @@ p.section-lead {
 }
 
 .pill {
+  --c: var(--acier);
+  position: relative;
   background: var(--card-bg);
-  border: 1px solid var(--card-border);
+  border: 1px solid color-mix(in srgb, var(--c) 30%, var(--card-border));
   border-radius: 999px;
-  padding: 6px 14px;
+  padding: 6px 14px 6px 22px;
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--muted);
   transition: border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
 }
 
+.pill::before {
+  content: "";
+  position: absolute;
+  left: 11px;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background: var(--c);
+}
+
 .pill:hover {
-  border-color: color-mix(in srgb, var(--rouge) 40%, var(--card-border));
+  border-color: color-mix(in srgb, var(--c) 55%, var(--card-border));
   color: var(--fg);
   transform: translateY(-1px);
 }
@@ -315,6 +366,7 @@ footer .footlinks a:hover { text-decoration: none; color: var(--rouge); }
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .card, .btn, .pill { transition: none; }
+  .orb { animation: none; }
 }
 
 /* Politique de confidentialité */
